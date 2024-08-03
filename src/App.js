@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+//represents each square on the board
 function Square({ value, onSquareClick }) {
   return (
     <button className="square" onClick={onSquareClick}>
@@ -8,8 +9,10 @@ function Square({ value, onSquareClick }) {
   );
 }
 
+//represent the game board
 function Board({xIsNext, squares, onPlay}) {
   function handleClick(i) {
+    //prevent making new moves after there is a winner or making a move on a postition that have been filled
     if (calculateWinner(squares) || squares[i]){
       return;
     }
@@ -96,13 +99,19 @@ export default function Game(){
 }
 
 function calculateWinner(squares){
+  //winning positions
   const lines = [
+    //check if 3 elements on a row are the same
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
+
+    //check vertically
     [0, 3, 6],
     [1, 4, 7],
     [2, 5, 8],
+
+    //check diagnolly 
     [0, 4, 8],
     [2, 4, 6],
   ];
