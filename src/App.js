@@ -2,7 +2,7 @@ function Square({value}){
   function HandleClick(){
     console.log("clicked!");
   }
-  return <button className="square" onclick={HandleClick}>{value}</button>;
+  return <button className="square" onClick={HandleClick}>{value}</button>;
   
 }
 
