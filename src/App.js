@@ -2,10 +2,12 @@ import { useState } from "react";
 
 function Square(){
   const [value, setValue] = useState(null);
-  return <button className="square" onClick={HandleClick}>{value}</button>;
   function HandleClick(){
     setValue('x');
   }
+  
+  return <button className="square" onClick={HandleClick}>{value}</button>;
+  
 }
 
 export default function Board() {
