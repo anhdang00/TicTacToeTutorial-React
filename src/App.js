@@ -16,9 +16,7 @@ export default function Board() {
     if (squares[idx] || calculateWinner(squares)){
       return;
     }
-    if (squares[idx]){
-      return;
-    }
+
     const nextSquares = squares.slice();
     if (xIsNext) {
       nextSquares[idx] = 'X';
