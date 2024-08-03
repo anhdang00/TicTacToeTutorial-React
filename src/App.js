@@ -34,6 +34,7 @@ function Board({xIsNext, squares, onPlay}) {
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
 
+  //display gameboard
   return (
     <>
       <div className='status'>{status}</div>
